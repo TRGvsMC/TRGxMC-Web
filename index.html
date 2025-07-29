@@ -1,3 +1,21 @@
+<script>
+document.querySelector(".particle-button").addEventListener("click", () => {
+  const container = document.querySelector(".particles");
+  for (let i = 0; i < 30; i++) {
+    const particle = document.createElement("div");
+    particle.classList.add("particle");
+    const angle = Math.random() * 360;
+    const radius = Math.random() * 50;
+    const x = Math.cos(angle) * radius + "px";
+    const y = Math.sin(angle) * radius + "px";
+    particle.style.setProperty("--x", x);
+    particle.style.setProperty("--y", y);
+    container.appendChild(particle);
+    setTimeout(() => particle.remove(), 600);
+  }
+});
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
